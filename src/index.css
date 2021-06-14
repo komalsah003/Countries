@@ -1,13 +1,142 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --dark-bg-color:hsl(207,26%,17%);
+  --article-color:rgb(209, 23%, 22%);
+  --text-color:rgb(0, 0%, 100%);
+  --light-mode-text:rgb(200, 15%, 8%);
+  --light-mode-input:hsl(0,0%,52%);
+  --light-mode-background:hsl(0,0%,98%);
+}
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* img{
+  max-width: 100%;
+} */
+
+ul{
+  list-style-type: none;
+}
+.countries article img{
+  border-radius: 5px 5px 0 0;
+  height: 250px;
+  width: 100%;
+  
+}
+
+.countries{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.countries , .details{
+  background-color: #2b3743;
+  padding: 20px;
+  margin-top: -10px;
+  border-radius: 0 0 5px 5px;
+}
+
+.countries .details h4{
+  padding-bottom: 10px;
+}
+
+.countries .details h4 span{
+  font-weight: 300;
+}
+
+.header i{
+  cursor: pointer;
+}
+
+.header , .form , .countries {
+  padding: 10px 50px;
+}
+
+.header{
+  box-shadow: 0 5px 10px hsla(200,15%,8%,0.1);
+  display: flex;
+  background-color: hsl(209,23%,22%);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: var(--text-color);
+}
+
+body{
+  width: 99%;
+  margin: auto;
+  background-color: var(--dark-bg-color);
+  transition: background-color 0.4s;
+  font-family: 'Nunito sans', sans-serif;
+}
+
+@media (min-width: 992px) {
+  .countries{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+  } 
+
+  .header , .form ,.countries{
+    padding:20px 100px
+  }
+}
+
+@media (min-width: 768px) {
+  .countries{
+    grid-template-columns: repeat(3, 1fr);
+  } 
+
+.form {
+  width: auto;
+}
+}
+
+@media (min-width: 640px) {
+  .countries{
+    grid-template-columns: repeat(4, 1fr);
+  } 
+}
+
+@media (max-width: 500px) {
+ .header h1{
+   font-size: 20px;
+   padding: 20px 0;
+ }
+
+ .form select {
+   width:50vw;
+   padding: 3px;
+ }
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form input{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 8px;
+  margin: 0 0 30px;
+  border-radius: 5px;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.form input::placeholder{
+  color: white;
 }
